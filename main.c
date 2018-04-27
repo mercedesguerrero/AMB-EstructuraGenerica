@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "EstructuraGenerica.h"
+
 //#include "susFunciones.h"
 #define CANTIDAD 10
+
 int main()
 {
+    int id;
+
     eGenerica listadoGenerico[CANTIDAD];
-    eGen_init(listadoGenerico,CANTIDAD);
+    eGen_init(listadoGenerico, CANTIDAD);
 
     printf( "\n \t muestro el array... esta vacio");
     eGen_mostrarListado(listadoGenerico,CANTIDAD);
@@ -21,6 +25,8 @@ int main()
     printf( "\n \t cargo dos elementos y muestro el array");
     eGen_mostrarListado(listadoGenerico,CANTIDAD);
     getchar();
+
+    eGen_baja(listadoGenerico, CANTIDAD, id);
 
     printf( "\n \t muestro el array con los borrados y vacios");
     eGen_mostrarListadoConBorrados(listadoGenerico,CANTIDAD);

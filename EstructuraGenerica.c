@@ -5,10 +5,11 @@
 #define TAMANIO 10
 #define OCUPADO 0
 #define LIBRE 1
+#define CANTIDAD 10
 
 
 
-int eGen_init( eGenerica listado[],int limite)
+int eGen_init (eGenerica listado[],int limite)
 {
     int retorno = -1;
     int i;
@@ -24,7 +25,7 @@ int eGen_init( eGenerica listado[],int limite)
     return retorno;
 }
 
-int eGen_buscarLugarLibre(eGenerica listado[],int limite)
+int eGen_buscarLugarLibre(eGenerica listado[], int limite)
 {
     int retorno = -1;
     int i;
@@ -161,4 +162,24 @@ int eGen_alta(eGenerica  listado[],int limite)
         }
     }
     return retorno;
+}
+
+void eGen_baja(eGenerica listadoGenerico[], int limite, int id)
+{
+    int i;
+
+    eGen_mostrarListado(listadoGenerico, CANTIDAD);
+
+    printf( "\n \t Seleccione ID a dar de baja");
+    getchar();
+
+    for (i=0; i<limite; i++)
+    {
+        if(listadoGenerico[i].estado == OCUPADO && listadoGenerico[i].idGenerica == id)
+            {
+                listadoGenerico[i].idGenerica== 0;
+                listadoGenerico[i].estado== LIBRE;
+            }
+
+    }
 }
